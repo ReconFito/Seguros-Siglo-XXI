@@ -40,7 +40,6 @@ function currentPage() {
         }
     }
     return "";
-
 }
 
 function deleteRegister(element) {
@@ -69,16 +68,11 @@ function deleteRegister(element) {
 }
 
 function actionMessage(icon, message) {
-
-    const alert = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-    })
-    alert.fire({
+    Swal.fire({
         icon: icon,
-        title: message
+        timer: 2000,
+        title: message,
+        timerProgressBar: true,
+        showConfirmButtonk: false,
     })
 }

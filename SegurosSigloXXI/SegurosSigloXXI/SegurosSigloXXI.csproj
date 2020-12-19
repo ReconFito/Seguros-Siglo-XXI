@@ -77,6 +77,7 @@
     <Content Include="Formularios\frmAdiccionCliente.aspx" />
     <Content Include="Formularios\frmCoberturaPoliza.aspx" />
     <Content Include="Formularios\frmMantenimientoCliente.aspx" />
+    <Content Include="Formularios\frmRegistroPoliza.aspx" />
     <Content Include="ModeloSigloXXI.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModeloSigloXXI.Context.cs</LastGenOutput>
@@ -88,8 +89,9 @@
       <LastGenOutput>ModeloSigloXXI.cs</LastGenOutput>
     </Content>
     <Content Include="Formularios\frmRegistroPrincipal.aspx" />
+    <Content Include="Recursos\logo svg.svg" />
     <Content Include="scripts\jquery-3.5.1.js" />
-    <Content Include="scripts\MantenimientoClientesScripts.js" />
+    <Content Include="scripts\GeneralScripts.js" />
     <Content Include="scripts\MasterScripts.js" />
     <Content Include="styles\GeneralStyles.css">
       <DependentUpon>GeneralStyles.scss</DependentUpon>
@@ -124,6 +126,7 @@
     <Compile Include="Clases\Email.cs" />
     <Compile Include="Clases\EnlaceData.cs" />
     <Compile Include="Clases\EventosGridView.cs" />
+    <Compile Include="Clases\ResultSetAdiccionesCliente.cs" />
     <Compile Include="Cobertura_Poliza.cs">
       <DependentUpon>ModeloSigloXXI.tt</DependentUpon>
     </Compile>
@@ -154,6 +157,13 @@
     </Compile>
     <Compile Include="Formularios\frmMantenimientoCliente.aspx.designer.cs">
       <DependentUpon>frmMantenimientoCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRegistroPoliza.aspx.cs">
+      <DependentUpon>frmRegistroPoliza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRegistroPoliza.aspx.designer.cs">
+      <DependentUpon>frmRegistroPoliza.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento_Adicciones_Cliente.cs">
       <DependentUpon>ModeloSigloXXI.tt</DependentUpon>
@@ -216,6 +226,9 @@
       <DependentUpon>ModeloSigloXXI.tt</DependentUpon>
     </Compile>
     <Compile Include="usuarios.cs">
+      <DependentUpon>ModeloSigloXXI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_infoCliente.cs">
       <DependentUpon>ModeloSigloXXI.tt</DependentUpon>
     </Compile>
   </ItemGroup>

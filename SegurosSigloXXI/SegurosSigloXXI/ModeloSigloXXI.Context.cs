@@ -34,6 +34,7 @@ namespace SegurosSigloXXI
         public DbSet<Mantenimiento_Cliente> Mantenimiento_Cliente { get; set; }
         public DbSet<Registro_Polizas> Registro_Polizas { get; set; }
         public DbSet<usuarios> usuarios { get; set; }
+        public DbSet<vw_infoCliente> vw_infoCliente { get; set; }
     
         public virtual int paAdiccionesDelete(Nullable<int> pId_Adiccion)
         {

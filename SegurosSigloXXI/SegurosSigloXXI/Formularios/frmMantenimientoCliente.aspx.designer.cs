@@ -7,119 +7,133 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SegurosSigloXXI
+namespace SegurosSigloXXI.Formularios
 {
 
 
-    public partial class Plantilla
+    public partial class MantenimientoCliente
     {
 
         /// <summary>
-        /// Control head.
+        /// Control btnRegistrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnRegistrar;
 
         /// <summary>
-        /// Control cerrarSesion.
+        /// Control txtCedula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor cerrarSesion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCedula;
 
         /// <summary>
-        /// Control op1.
+        /// Control txtGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor op1;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect txtGenero;
 
         /// <summary>
-        /// Control op2.
+        /// Control txtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor op2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNombre;
 
         /// <summary>
-        /// Control op4.
+        /// Control txtPrimerApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor op4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPrimerApellido;
 
         /// <summary>
-        /// Control op5.
+        /// Control txtSegundoApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor op5;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSegundoApellido;
 
         /// <summary>
-        /// Control op6.
+        /// Control txtDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor op6;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDireccion;
 
         /// <summary>
-        /// Control op7.
+        /// Control txtTelefonoPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor op7;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTelefonoPrincipal;
 
         /// <summary>
-        /// Control contentBody.
+        /// Control txtTelefonoSecundario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder contentBody;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTelefonoSecundario;
 
         /// <summary>
-        /// Control txtNombreSesion.
+        /// Control txtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtNombreSesion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail;
 
         /// <summary>
-        /// Control ultimaSesion.
+        /// Control txtFechaNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ultimaSesion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtFechaNacimiento;
 
         /// <summary>
-        /// Control pageScript.
+        /// Control tablaMantenimientoCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder pageScript;
+        protected global::System.Web.UI.WebControls.GridView tablaMantenimientoCliente;
+
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new SegurosSigloXXI.Plantilla Master
+        {
+            get
+            {
+                return ((SegurosSigloXXI.Plantilla)(base.Master));
+            }
+        }
     }
 }

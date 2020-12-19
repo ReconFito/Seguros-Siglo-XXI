@@ -77,7 +77,6 @@ namespace SegurosSigloXXI
                         .FindControl("btnRegistrar") as HtmlGenericControl;
                     btnRegistar.Visible = false;
                     this.op2.Visible = false;
-                    this.op3.Visible = false;
                     this.op4.Visible = false;
                     this.op5.Visible = false;
                 }

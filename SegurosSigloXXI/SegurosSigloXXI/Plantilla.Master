@@ -37,15 +37,17 @@
         <div class="container-actions">
             <a href="~/Formularios/frmMantenimientoCliente.aspx"
                 class="btn-link" runat="server" id="op1">Mantenimiento de Clientes</a>
+
             <a href="~/Formularios/frmAdiccion.aspx"
                 class="btn-link" runat="server" id="op2">Mantenimiento de Adicciones</a>
-            <a href="#" class="btn-link" runat="server" id="op3">Mantenimiento de Adicciones por Cliente</a>
 
             <a href="~/Formularios/frmCoberturaPoliza.aspx"
                 class="btn-link" runat="server" id="op4">Mantenimiento de Cobertura por Poliza</a>
 
             <a href="#" class="btn-link" runat="server" id="op5">Registro de Poliza</a>
+
             <a href="#" class="btn-link" runat="server" id="op6">Reporte de Poliza por cliente</a>
+
             <a href="#" class="btn-link" runat="server" id="op7">Reporte de Adicciones por Cliente</a>
         </div>
     </nav>
@@ -55,7 +57,7 @@
             <asp:ContentPlaceHolder ID="contentBody" runat="server"></asp:ContentPlaceHolder>
         </div>
     </div>
-    <footer style="background: #404040; padding: 1rem;">
+    <footer>
         <div class="d-flex text-white-50">
             <h4 class="">Bienvenido(a)</h4>
             <span class="h4 ml-4 d-inline" id="txtNombreSesion" runat="server"></span>

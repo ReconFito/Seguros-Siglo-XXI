@@ -71,6 +71,24 @@
           <Property Name="id_usuario" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fecha_sesion" Type="date" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'polizassigloxxi.dbo.vw_infoCliente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_infoCliente">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="nombreCliente" />
+            <PropertyRef Name="Cedula" />
+            <PropertyRef Name="Primer_Apellido" />
+            <PropertyRef Name="Segundo_Apellido" />
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="nombreCliente" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Primer_Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Segundo_Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Mantenimiento_Adicciones_Cliente_Adicciones">
           <End Role="Adicciones" Type="Self.Adicciones" Multiplicity="1" />
           <End Role="Mantenimiento_Adicciones_Cliente" Type="Self.Mantenimiento_Adicciones_Cliente" Multiplicity="*" />
@@ -213,6 +231,16 @@
           <EntitySet Name="Mantenimiento_Cliente" EntityType="Self.Mantenimiento_Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Registro_Polizas" EntityType="Self.Registro_Polizas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_infoCliente" EntityType="Self.vw_infoCliente" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_infoCliente].[Id] AS [Id], 
+[vw_infoCliente].[nombreCliente] AS [nombreCliente], 
+[vw_infoCliente].[Cedula] AS [Cedula], 
+[vw_infoCliente].[Primer_Apellido] AS [Primer_Apellido], 
+[vw_infoCliente].[Segundo_Apellido] AS [Segundo_Apellido], 
+[vw_infoCliente].[Nombre] AS [Nombre]
+FROM [dbo].[vw_infoCliente] AS [vw_infoCliente]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Mantenimiento_Adicciones_Cliente_Adicciones" Association="Self.FK_Mantenimiento_Adicciones_Cliente_Adicciones">
             <End Role="Adicciones" EntitySet="Adicciones" />
             <End Role="Mantenimiento_Adicciones_Cliente" EntitySet="Mantenimiento_Adicciones_Cliente" />
@@ -439,6 +467,7 @@
           <FunctionImport Name="paRegistroPolizaDelete">
           <Parameter Name="pId" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="vw_infoCliente" EntityType="polizassigloxxiModel.vw_infoCliente" />
         </EntityContainer>
         <ComplexType Name="paAdiccionesSelect_Result">
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
@@ -512,6 +541,22 @@
           <Property Name="tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="id_usuario" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fecha_sesion" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vw_infoCliente">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="nombreCliente" />
+            <PropertyRef Name="Primer_Apellido" />
+            <PropertyRef Name="Segundo_Apellido" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Cedula" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="nombreCliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Primer_Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Segundo_Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -697,6 +742,18 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="paRegistroPolizaDelete" FunctionName="polizassigloxxiModel.Store.paRegistroPolizaDelete" />
+          <EntitySetMapping Name="vw_infoCliente">
+            <EntityTypeMapping TypeName="polizassigloxxiModel.vw_infoCliente">
+              <MappingFragment StoreEntitySet="vw_infoCliente">
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Segundo_Apellido" ColumnName="Segundo_Apellido" />
+                <ScalarProperty Name="Primer_Apellido" ColumnName="Primer_Apellido" />
+                <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
