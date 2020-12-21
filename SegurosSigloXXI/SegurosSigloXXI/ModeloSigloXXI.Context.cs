@@ -364,13 +364,17 @@ namespace SegurosSigloXXI
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("paRegistroPolizasInsert", iD_COBERTURA_POLIZAParameter, iD_CLIENTEParameter, pMONTO_ASEGURADOParameter, pPORCENTAJE_COBERTURAParameter, pNUMERO_ADICCIONESParameter, pMONTOADICCIONESParameter, pPRIMA_ANTES_IMPUESTOSParameter, pIMPUESTOSParameter, pPRIMA_FINALParameter);
         }
     
-        public virtual ObjectResult<paRegistroPolizasSelect_Result> paRegistroPolizasSelect(Nullable<int> iD_REGISTRO)
+        public virtual ObjectResult<paRegistroPolizasSelect_Result> paRegistroPolizasSelect(Nullable<int> iD_REGISTRO, Nullable<int> id_cliente)
         {
             var iD_REGISTROParameter = iD_REGISTRO.HasValue ?
                 new ObjectParameter("ID_REGISTRO", iD_REGISTRO) :
                 new ObjectParameter("ID_REGISTRO", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paRegistroPolizasSelect_Result>("paRegistroPolizasSelect", iD_REGISTROParameter);
+            var id_clienteParameter = id_cliente.HasValue ?
+                new ObjectParameter("id_cliente", id_cliente) :
+                new ObjectParameter("id_cliente", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paRegistroPolizasSelect_Result>("paRegistroPolizasSelect", iD_REGISTROParameter, id_clienteParameter);
         }
     
         public virtual int paRegistroPolizaUpdate(Nullable<int> pID, Nullable<int> pID_COBERTURA_POLIZA, Nullable<int> pID_CLIENTE, Nullable<decimal> pMONTO_ASEGURADO, Nullable<decimal> pPORCENTAJE_COBERTURA, Nullable<int> pNUMERO_ADICCIONES, Nullable<decimal> monto_adicciones, Nullable<decimal> pPRIMA_ANTES_IMPUESTOS, Nullable<decimal> pIMPUESTOS, Nullable<decimal> pPRIMA_FINAL)
@@ -425,6 +429,69 @@ namespace SegurosSigloXXI
                 new ObjectParameter("pId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("paRegistroPolizaDelete", pIdParameter);
+        }
+    
+        public virtual ObjectResult<pa_RegistroPolizasInnerSelect_Result> pa_RegistroPolizasInnerSelect(Nullable<int> idRegistro, Nullable<int> idCliente, Nullable<int> id_Cobertura, Nullable<decimal> monto_Asegurado, Nullable<int> numero_adicciones)
+        {
+            var idRegistroParameter = idRegistro.HasValue ?
+                new ObjectParameter("idRegistro", idRegistro) :
+                new ObjectParameter("idRegistro", typeof(int));
+    
+            var idClienteParameter = idCliente.HasValue ?
+                new ObjectParameter("idCliente", idCliente) :
+                new ObjectParameter("idCliente", typeof(int));
+    
+            var id_CoberturaParameter = id_Cobertura.HasValue ?
+                new ObjectParameter("id_Cobertura", id_Cobertura) :
+                new ObjectParameter("id_Cobertura", typeof(int));
+    
+            var monto_AseguradoParameter = monto_Asegurado.HasValue ?
+                new ObjectParameter("monto_Asegurado", monto_Asegurado) :
+                new ObjectParameter("monto_Asegurado", typeof(decimal));
+    
+            var numero_adiccionesParameter = numero_adicciones.HasValue ?
+                new ObjectParameter("numero_adicciones", numero_adicciones) :
+                new ObjectParameter("numero_adicciones", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pa_RegistroPolizasInnerSelect_Result>("pa_RegistroPolizasInnerSelect", idRegistroParameter, idClienteParameter, id_CoberturaParameter, monto_AseguradoParameter, numero_adiccionesParameter);
+        }
+    
+        public virtual ObjectResult<pa_RegistroPolizasInnerSelect1_Result> pa_RegistroPolizasInnerSelect1(Nullable<int> idRegistro, Nullable<int> idCliente, Nullable<int> id_Cobertura, Nullable<decimal> monto_Asegurado, Nullable<int> numero_adicciones)
+        {
+            var idRegistroParameter = idRegistro.HasValue ?
+                new ObjectParameter("idRegistro", idRegistro) :
+                new ObjectParameter("idRegistro", typeof(int));
+    
+            var idClienteParameter = idCliente.HasValue ?
+                new ObjectParameter("idCliente", idCliente) :
+                new ObjectParameter("idCliente", typeof(int));
+    
+            var id_CoberturaParameter = id_Cobertura.HasValue ?
+                new ObjectParameter("id_Cobertura", id_Cobertura) :
+                new ObjectParameter("id_Cobertura", typeof(int));
+    
+            var monto_AseguradoParameter = monto_Asegurado.HasValue ?
+                new ObjectParameter("monto_Asegurado", monto_Asegurado) :
+                new ObjectParameter("monto_Asegurado", typeof(decimal));
+    
+            var numero_adiccionesParameter = numero_adicciones.HasValue ?
+                new ObjectParameter("numero_adicciones", numero_adicciones) :
+                new ObjectParameter("numero_adicciones", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pa_RegistroPolizasInnerSelect1_Result>("pa_RegistroPolizasInnerSelect1", idRegistroParameter, idClienteParameter, id_CoberturaParameter, monto_AseguradoParameter, numero_adiccionesParameter);
+        }
+    
+        public virtual ObjectResult<pa_InnerSelectAdicciones_Result> pa_InnerSelectAdicciones(Nullable<int> idCliente, Nullable<int> idAdiccion)
+        {
+            var idClienteParameter = idCliente.HasValue ?
+                new ObjectParameter("idCliente", idCliente) :
+                new ObjectParameter("idCliente", typeof(int));
+    
+            var idAdiccionParameter = idAdiccion.HasValue ?
+                new ObjectParameter("idAdiccion", idAdiccion) :
+                new ObjectParameter("idAdiccion", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pa_InnerSelectAdicciones_Result>("pa_InnerSelectAdicciones", idClienteParameter, idAdiccionParameter);
         }
     }
 }
