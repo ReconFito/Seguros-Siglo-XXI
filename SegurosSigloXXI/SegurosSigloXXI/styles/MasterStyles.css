@@ -43,17 +43,14 @@ body {
       .navigation-flex .container-actions a:hover {
         background-color: #808080; }
 
-.container-grid {
-  height: 100%;
-  box-sizing: border-box; }
-  .container-grid .grid-item {
-    width: 95%;
-    margin: 1rem auto 0 auto; }
-  .container-grid footer {
-    padding: 1rem;
-    background: #404040;
-    width: 100%;
-    margin-top: 2rem; }
+.container-grid .grid-item {
+  margin: 1rem auto 0 auto; }
+
+footer {
+  position: relative;
+  padding: 1rem;
+  background: #404040;
+  width: 100%; }
 
 @media only screen and (min-width: 320px) and (max-width: 720px) {
   .container-grid {

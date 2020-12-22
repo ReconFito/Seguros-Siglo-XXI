@@ -7,7 +7,7 @@ $(".btn-action").on("click", function () {
 });
 
 $(window).on("scroll", function () {
-    if (window.pageYOffset > 0) {
+    if (window.pageYOffset > navHeight / 2) {
         $(".navigation-flex").addClass("onScroll");
     } else {
         $(".navigation-flex").removeClass("onScroll");

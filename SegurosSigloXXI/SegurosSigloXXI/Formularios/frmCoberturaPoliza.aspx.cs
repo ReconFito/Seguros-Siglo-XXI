@@ -49,16 +49,16 @@ namespace SegurosSigloXXI.Formularios
             }
             else
             {
-            bool estadoInsert = coberturaPoliza.InsertaCoberturaPoliza(nombre, descripcion, porcentaje);
-            if (estadoInsert)
-            {
-                this.Master.Alerta("Registro insertado correctamente");
+                bool estadoInsert = coberturaPoliza.InsertaCoberturaPoliza(nombre, descripcion, porcentaje);
+                if (estadoInsert)
+                {
+                    this.Master.Alerta("Registro insertado correctamente");
+                }
+                else
+                {
+                    this.Master.Alerta("Error al insertar el registro", "error");
+                }
             }
-            else
-            {
-                this.Master.Alerta("Error al insertar el registro", "error");
-            }
-        }
         }
         #endregion
 

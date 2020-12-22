@@ -1,7 +1,7 @@
 ﻿document.addEventListener("DOMContentLoaded", () => {
-    const sl = document.querySelectorAll("select");
-    if (sl !== null) {
-        sl.forEach(item => { item.selectedIndex = "-1" });
+    const select = document.querySelector("select");
+    if (select !== null) {
+        select.selectedIndex = "-1"
     }
     resetDefault();
 
