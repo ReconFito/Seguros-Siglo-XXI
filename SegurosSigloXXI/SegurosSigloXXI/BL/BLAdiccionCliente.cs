@@ -9,14 +9,6 @@ namespace SegurosSigloXXI.BL
     {
         polizassigloxxiEntities adiccionCliente = new polizassigloxxiEntities();
 
-        #region Inner Select cliente adicciones
-        public List<pa_InnerSelectAdicciones_Result>InnerSelectAdiccionesCliente(int idCliente, int idAdiccion)
-        {
-            var registros = adiccionCliente.pa_InnerSelectAdicciones(idCliente, idAdiccion).ToList();
-            return registros;
-        }
-        #endregion
-
         #region Lista Adicciones por cliente
         public List<paMantenimientoAdiccionesClienteSelect_Result> ListaAdiccionCliente(int idAdiccion = -1)
         {

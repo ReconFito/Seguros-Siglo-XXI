@@ -8,31 +8,10 @@ namespace SegurosSigloXXI.BL
     public class BLRegistroPoliza
     {
         polizassigloxxiEntities registroPoliza = new polizassigloxxiEntities();
-        #region Registros de poliza innerSelect
-        /// <summary>
-        /// Método encargado de filtar registros usando los parámetros opcionales enviados
-        /// por el usuario, sobre la tabla registro de polizas.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="idCliente"></param>
-        /// <param name="idCobertura"></param>
-        /// <param name="montoAsegurado"></param>
-        /// <param name="numeroAdicciones"></param>
-        /// <returns></returns>
-        public List<pa_RegistroPolizasInnerSelect1_Result> InnerSelectRegistroPolizas(int id, int idCliente,
-                                                                        int idCobertura, decimal montoAsegurado,
-                                                                        int numeroAdicciones)
-        {
-            var registros = registroPoliza.pa_RegistroPolizasInnerSelect1(id, idCliente, idCobertura,
-                                                                         montoAsegurado, numeroAdicciones).ToList();
-            return registros;
-        }
-        #endregion
-
         #region Lista Registro de pólizas
-        public List<paRegistroPolizasSelect_Result> ListaRegistroPoliza(int idRegistro = -1, int idCliente = -1)
+        public List<paRegistroPolizasSelect_Result> ListaRegistroPoliza(int idRegistro = -1)
         {
-            var registro = registroPoliza.paRegistroPolizasSelect(idRegistro, idCliente).ToList();
+            var registro = registroPoliza.paRegistroPolizasSelect(idRegistro).ToList();
             return registro;
         }
         #endregion
